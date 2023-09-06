@@ -1,0 +1,35 @@
+{
+  "entries": {
+    "tap": {
+      "homebrew/cask": {
+        "revision": "bdf391925f6355a70c7c885c918947af7749933f"
+      }
+    },
+    "cask": {
+      "firefox": {
+        "version": "117.0",
+        "options": {
+          "full_name": "firefox"
+        }
+      },
+      "google-chrome": {
+        "version": "116.0.5845.179",
+        "options": {
+          "full_name": "google-chrome"
+        }
+      }
+    }
+  },
+  "system": {
+    "macos": {
+      "ventura": {
+        "HOMEBREW_VERSION": "4.1.9",
+        "HOMEBREW_PREFIX": "/opt/homebrew",
+        "Homebrew/homebrew-core": "api",
+        "CLT": "14.3.1.0.1.1683849156",
+        "Xcode": "14.3",
+        "macOS": "13.5.1"
+      }
+    }
+  }
+}
