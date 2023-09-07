@@ -10,4 +10,5 @@ brew 'wget'
 cask 'docker'
 cask 'firefox'
 cask 'google-chrome'
+cask 'spotify'
 

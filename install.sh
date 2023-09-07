@@ -31,6 +31,7 @@ defaults write com.apple.dock persistent-apps -array \
 	"$(dockItem '/System/Applications/System Settings.app')" \
 	"$(dockItem '/Applications/Firefox.app')" \
 	"$(dockItem '/Applications/Google Chrome.app')" \
-	"$(dockItem '/System/Applications/Utilities/Terminal.app')"
+	"$(dockItem '/System/Applications/Utilities/Terminal.app')" \
+	"$(dockItem '/Applications/Spotify.app')"
 killall Dock
 
