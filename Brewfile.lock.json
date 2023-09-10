@@ -2,7 +2,7 @@
   "entries": {
     "tap": {
       "homebrew/cask": {
-        "revision": "d3fc6d93b693a2d5a5f93c14ea8a8fa9163c24f9"
+        "revision": "fd12be4a7737a16d0c35f9810631d191990acffa"
       }
     },
     "cask": {
@@ -28,6 +28,12 @@
         "version": "1.2.19.941,bf202593,417",
         "options": {
           "full_name": "spotify"
+        }
+      },
+      "visual-studio-code": {
+        "version": "1.82.0",
+        "options": {
+          "full_name": "visual-studio-code"
         }
       }
     },
@@ -345,7 +351,7 @@
   "system": {
     "macos": {
       "ventura": {
-        "HOMEBREW_VERSION": "4.1.9",
+        "HOMEBREW_VERSION": "4.1.10",
         "HOMEBREW_PREFIX": "/opt/homebrew",
         "Homebrew/homebrew-core": "api",
         "CLT": "14.3.1.0.1.1683849156",
