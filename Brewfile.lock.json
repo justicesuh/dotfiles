@@ -2,7 +2,7 @@
   "entries": {
     "tap": {
       "homebrew/cask": {
-        "revision": "fd12be4a7737a16d0c35f9810631d191990acffa"
+        "revision": "07832716a61b66c3b02814dfa75353f78a832a85"
       }
     },
     "cask": {
@@ -34,6 +34,18 @@
         "version": "1.82.0",
         "options": {
           "full_name": "visual-studio-code"
+        }
+      },
+      "signal": {
+        "version": "6.30.1",
+        "options": {
+          "full_name": "signal"
+        }
+      },
+      "rectangle": {
+        "version": "0.70",
+        "options": {
+          "full_name": "rectangle"
         }
       }
     },

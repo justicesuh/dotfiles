@@ -10,6 +10,8 @@ brew 'wget'
 cask 'docker'
 cask 'firefox'
 cask 'google-chrome'
+cask 'rectangle'
+cask 'signal'
 cask 'spotify'
 cask 'visual-studio-code'
 
