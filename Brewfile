@@ -9,6 +9,7 @@ brew 'wget'
 
 cask 'docker'
 cask 'firefox'
+cask 'gimp'
 cask 'google-chrome'
 cask 'rectangle'
 cask 'signal'
