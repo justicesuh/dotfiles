@@ -28,3 +28,10 @@ if ! command -v docker > /dev/null 2>&1; then
     sudo usermod -aG docker ${USER}
 fi
 
+if ! command -v code > /dev/null 2>&1; then
+    curl -fsSL https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor -o /etc/apt/keyrings/microsoft-archive-keyring.gpg
+	sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/microsoft-archive-keyring.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
+	sudo apt update
+	sudo apt install -y code
+fi
+
