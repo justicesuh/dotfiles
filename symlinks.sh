@@ -2,7 +2,6 @@
 
 DOTFILES=$(realpath $0 | xargs dirname)
 
-sudo rm -rf $HOME/.vimrc > /dev/null 2>&1
-
+ln -sf $DOTFILES/vscode/settings.json $HOME/.config/Code/User/settings.json
 ln -sf $DOTFILES/.vimrc $HOME/.vimrc
 
