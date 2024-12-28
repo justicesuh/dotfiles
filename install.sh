@@ -9,3 +9,5 @@ if ! command -v zsh > /dev/null 2>&1; then
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
 
+gsettings set org.gnome.desktop.interface text-scaling-factor 1.25
+
