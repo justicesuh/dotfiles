@@ -35,5 +35,8 @@ if ! command -v code > /dev/null 2>&1; then
     sudo apt install -y code
 fi
 
-sh -c ./symlinks.sh
+if ! dpkg -s firefox-esr | grep "Status" > /dev/null 2>&1; then
+    sudo apt install -y firefox-esr
+fi
 
+sh -c ./symlinks.sh
