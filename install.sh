@@ -1,7 +1,7 @@
 #!/bin/sh
 
 sudo apt update
-sudo apt install -y curl git vim
+sudo apt install -y curl git vim xclip
 
 if ! command -v zsh > /dev/null 2>&1; then
     sudo apt install -y zsh
