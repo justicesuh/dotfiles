@@ -53,4 +53,4 @@ install_pkg firefox-esr
 install_pkg python3
 install_pkg python3-pip
 
-sh -c ./symlinks.sh
+sh -c $(realpath $0 | xargs dirname)/symlinks.sh
