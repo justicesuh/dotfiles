@@ -52,6 +52,5 @@ fi
 install_pkg firefox-esr
 install_pkg python3
 install_pkg python3-pip
-install_pkg taskwarrior
 
 sh -c $(realpath $0 | xargs dirname)/symlinks.sh
