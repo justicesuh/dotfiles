@@ -8,6 +8,12 @@ is_pkg_installed() {
     fi
 }
 
+install_pkg() {
+    if ! is_pkg_installed "$1"; then
+        sudo apt install -y "$1"
+    fi
+}
+
 sudo apt update
 sudo apt install -y curl git vim xclip
 
@@ -43,8 +49,8 @@ if ! command -v code > /dev/null 2>&1; then
     sudo apt install -y code
 fi
 
-if ! is_pkg_installed firefox-esr; then
-    sudo apt install -y firefox-esr
-fi
+install_pkg firefox-esr
+install_pkg python3
+install_pkg python3-pip
 
 sh -c ./symlinks.sh
