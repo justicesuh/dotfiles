@@ -1,9 +1,17 @@
 #!/bin/sh
 
+is_pkg_installed() {
+    if dpkg-query -W -f='${Status}' "$1" 2>/dev/null | grep -q "install ok installed"; then
+        return 0
+    else
+        return 1
+    fi
+}
+
 sudo apt update
 sudo apt install -y curl git vim xclip
 
-if ! command -v zsh > /dev/null 2>&1; then
+if ! is_pkg_installed zsh; then
     sudo apt install -y zsh
     sudo chsh -s $(which zsh)
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -11,7 +19,7 @@ fi
 
 gsettings set org.gnome.desktop.interface text-scaling-factor 1.25
 
-if dpkg -s gnome-games | grep "Status" > /dev/null 2>&1; then
+if is_pkg_installed gnome-games; then
     sudo apt purge --autoremove -y gnome-games
 fi
 if command -v libreoffice > /dev/null 2>&1; then
@@ -35,7 +43,7 @@ if ! command -v code > /dev/null 2>&1; then
     sudo apt install -y code
 fi
 
-if ! dpkg -s firefox-esr | grep "Status" > /dev/null 2>&1; then
+if ! is_pkg_installed firefox-esr; then
     sudo apt install -y firefox-esr
 fi
 
