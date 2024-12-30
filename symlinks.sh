@@ -7,3 +7,4 @@ ln -sf $DOTFILES/.gitconfig $HOME/.gitconfig
 ln -sf $DOTFILES/.vimrc $HOME/.vimrc
 ln -sf $DOTFILES/.zshrc $HOME/.zshrc
 ln -sf $DOTFILES/aliases.zsh $HOME/.oh-my-zsh/custom/aliases.zsh
+ln -sf $DOTFILES/path.zsh $HOME/.oh-my-zsh/custom/path.zsh
