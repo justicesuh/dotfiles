@@ -10,5 +10,4 @@ alias dotfiles="cd $DOTFILES"
 alias wifi="nmcli dev wifi show-password"
 
 alias python="python3"
-alias todo="python $HOME/.todo/todo.py"
 alias t="todo"
