@@ -56,6 +56,14 @@ if ! is_pkg_installed spotify-client; then
     sudo apt install -y spotify-client
 fi
 
+if ! is_pkg_installed google-chrome-stable; then
+    sudo apt install -y software-properties-common apt-transport-https ca-certificates
+    curl -fSsL https://dl.google.com/linux/linux_signing_key.pub | sudo gpg --dearmor | sudo tee /usr/share/keyrings/google-chrome.gpg >> /dev/null
+    echo "deb [arch=amd64 signed-by=/usr/share/keyrings/google-chrome.gpg] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list
+    sudo apt update
+    sudo apt install -y google-chrome-stable
+fi
+
 install_pkg firefox-esr
 install_pkg python3
 install_pkg python3-pip
