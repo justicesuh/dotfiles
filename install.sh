@@ -68,4 +68,11 @@ install_pkg firefox-esr
 install_pkg python3
 install_pkg python3-pip
 
+if ! command -v studio > /dev/null 2>&1; then
+    cd /opt/
+    sudo wget -c https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2024.3.1.15/android-studio-2024.3.1.15-linux.tar.gz -O android-studio-2024.3.1.15-linux.tar.gz
+    sudo tar -xvzf android-studio-2024.3.1.15-linux.tar.gz
+    sudo rm android-studio-2024.3.1.15-linux.tar.gz
+fi
+
 sh -c $(realpath $0 | xargs dirname)/symlinks.sh
