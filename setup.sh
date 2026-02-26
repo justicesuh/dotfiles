@@ -1,16 +1,25 @@
 #!/bin/sh
 
-is_pkg_installed() {
+DOTFILES=$(realpath $0 | xargs dirname)
+
+is_package_installed() {
     dpkg-query -W -f='${Status}' "$1" 2>/dev/null | grep -q "install ok installed"
 }
 
-install_pkg() {
-    if ! is_pkg_installed "$1"; then
+install_package() {
+    if ! is_package_installed "$1"; then
         sudo apt install -y "$1"
         return 0
     else
         return 1
     fi
+}
+
+install_apt_packages() {
+    sudo apt update
+    for package in $(cat "$DOTFILES/apt_packages"); do
+        install_package $package
+    done
 }
 
 setup_zsh() {
@@ -51,11 +60,9 @@ setup_vscode() {
         sudo apt install -y code
 fi
 }
+#setup_symlinks
+#setup_docker
+#setup_vscode
 
-setup_zsh
-setup_symlinks
-setup_docker
-setup_vscode
+install_apt_packages
 
-install_pkg python3
-install_pkg python3-pip
