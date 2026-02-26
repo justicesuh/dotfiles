@@ -29,3 +29,6 @@ setup_symlinks() {
 
 setup_zsh
 setup_symlinks
+
+install_pkg python3
+install_pkg python3-pip
