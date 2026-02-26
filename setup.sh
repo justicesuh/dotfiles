@@ -65,6 +65,7 @@ link_files() {
 setup_symlinks() {
     link_files '.*' "$HOME"
     link_files '*.zsh' "$HOME/.oh-my-zsh/custom"
+    ln -sf "$DOTFILES/vscode/settings.json" "$HOME/.config/Code/User/settings.json"
 }
 
 setup_docker() {
