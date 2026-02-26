@@ -25,6 +25,11 @@ setup_symlinks() {
     while IFS= read -r f; do
         ln -sf $f $HOME/${f##*/}
     done
+
+    find $(realpath $0 | xargs dirname) -maxdepth 1 -mindepth 1 -name '*.zsh' |
+    while IFS= read -r f; do
+        ln -sf $f $HOME/.oh-my-zsh/custom/${f##*/}
+    done
 }
 
 setup_zsh
