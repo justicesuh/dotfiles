@@ -88,3 +88,5 @@ sudo apt update
 install_apt_packages
 #setup_docker
 
+gsettings set org.gnome.desktop.interface show-battery-percentage true
+
