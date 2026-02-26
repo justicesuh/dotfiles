@@ -7,7 +7,10 @@
     "editor.minimap.enabled": false,
     "editor.scrollbar.horizontal": "hidden",
 
+    "workbench.secondarySideBar.defaultVisibility": "hidden",
     "workbench.sideBar.location": "right",
     "workbench.statusBar.visible": false,
-    "workbench.startupEditor": "none"
+    "workbench.startupEditor": "none",
+
+    "chat.disableAIFeatures": true
 }
