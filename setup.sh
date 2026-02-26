@@ -32,8 +32,20 @@ setup_symlinks() {
     done
 }
 
+setup_docker() {
+    if ! command -v docker > /dev/null 2>&1; then
+        sudo apt install -y apt-transport-https ca-certificates gnupg
+        curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker.gpg
+        echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker.gpg] https://download.docker.com/linux/debian trixie stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+        sudo apt update
+        sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+        sudo usermod -aG docker ${USER}
+    fi
+}
+
 setup_zsh
 setup_symlinks
+setup_docker
 
 install_pkg python3
 install_pkg python3-pip
