@@ -69,11 +69,18 @@ setup_symlinks() {
     ln -sf "$DOTFILES/vscode/settings.json" "$HOME/.config/Code/User/settings.json"
 }
 
+setup_directories() {
+    while IFS= read -r dir; do
+        mkdir -p "$HOME/$dir"
+    done < "$DOTFILES/directories"
+}
+
 setup_docker() {
     sudo usermod -aG docker ${USER}
 }
 
 setup_zsh
+setup_directories
 setup_symlinks
 add_keys
 add_sources
