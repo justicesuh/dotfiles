@@ -65,6 +65,7 @@ link_files() {
 setup_symlinks() {
     link_files '.*' "$HOME"
     link_files '*.zsh' "$HOME/.oh-my-zsh/custom"
+    sudo ln -sf "$DOTFILES/firefox/policies.json" "/usr/lib/firefox-esr/distribution/policies.json"
     ln -sf "$DOTFILES/vscode/settings.json" "$HOME/.config/Code/User/settings.json"
 }
 
