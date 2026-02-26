@@ -55,16 +55,16 @@ setup_zsh() {
     fi
 }
 
-setup_symlinks() {
-	find $(realpath $0 | xargs dirname) -maxdepth 1 -mindepth 1 -name '.*' ! -name '.git' ! -name '.gitignore' |
+link_files() {
+    find "$DOTFILES" -maxdepth 1 -mindepth 1 -name "$1" ! -name '.git' ! -name '.gitignore' |
     while IFS= read -r f; do
-        ln -sf $f $HOME/${f##*/}
+        ln -sf "$f" "$2/${f##*/}"
     done
+}
 
-    find $(realpath $0 | xargs dirname) -maxdepth 1 -mindepth 1 -name '*.zsh' |
-    while IFS= read -r f; do
-        ln -sf $f $HOME/.oh-my-zsh/custom/${f##*/}
-    done
+setup_symlinks() {
+    link_files '.*' "$HOME"
+    link_files '*.zsh' "$HOME/.oh-my-zsh/custom"
 }
 
 setup_docker() {
