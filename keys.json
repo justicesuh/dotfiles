@@ -1,0 +1,10 @@
+[
+  {
+    "url": "https://download.docker.com/linux/debian/gpg",
+    "location": "/usr/share/keyrings/docker.gpg"
+  },
+  {
+    "url": "https://packages.microsoft.com/keys/microsoft.asc",
+    "location": "/etc/apt/keyrings/microsoft-archive-keyring.gpg"
+  }
+]
