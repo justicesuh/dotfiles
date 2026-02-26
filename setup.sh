@@ -47,7 +47,7 @@ setup_zsh() {
 }
 
 setup_symlinks() {
-	find $(realpath $0 | xargs dirname) -maxdepth 1 -mindepth 1 -name '.*' ! -name '.git' |
+	find $(realpath $0 | xargs dirname) -maxdepth 1 -mindepth 1 -name '.*' ! -name '.git' ! -name '.gitignore' |
     while IFS= read -r f; do
         ln -sf $f $HOME/${f##*/}
     done
