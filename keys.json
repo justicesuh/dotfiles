@@ -6,5 +6,9 @@
   {
     "url": "https://packages.microsoft.com/keys/microsoft.asc",
     "location": "/etc/apt/keyrings/microsoft-archive-keyring.gpg"
+  },
+  {
+    "url": "https://download.spotify.com/debian/pubkey_5384CE82BA52C83A.asc",
+    "location": "/etc/apt/trusted.gpg.d/spotify.gpg"
   }
 ]
