@@ -33,6 +33,15 @@ add_keys() {
     done
 }
 
+add_sources() {
+    for f in "$DOTFILES/sources.list.d"/*.list; do
+        name=$(basename "$f")
+        if [ ! -f "/etc/apt/sources.list.d/$name" ]; then
+            sed "s/ARCH/$(dpkg --print-architecture)/g" "$f" | sudo tee "/etc/apt/sources.list.d/$name" > /dev/null
+        fi
+    done
+}
+
 install_apt_packages() {
     for package in $(cat "$DOTFILES/apt_packages"); do
         install_package $package
@@ -40,7 +49,7 @@ install_apt_packages() {
 }
 
 setup_zsh() {
-    if install_pkg zsh; then
+    if install_package zsh; then
         sudo chsh -s $(which zsh)
         sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
     fi
@@ -59,27 +68,14 @@ setup_symlinks() {
 }
 
 setup_docker() {
-    if ! command -v docker > /dev/null 2>&1; then
-        echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker.gpg] https://download.docker.com/linux/debian trixie stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-        sudo apt update
-        sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-        sudo usermod -aG docker ${USER}
-    fi
+    sudo usermod -aG docker ${USER}
 }
 
-setup_vscode() {
-    if ! command -v code > /dev/null 2>&1; then
-        sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/microsoft-archive-keyring.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
-        sudo apt update
-        sudo apt install -y code
-fi
-}
+setup_zsh
 setup_symlinks
 add_keys
+add_sources
+sudo apt update
+install_apt_packages
 #setup_docker
-#setup_vscode
-
-#add_keys
-#sudo apt update
-#install_apt_packages
 
