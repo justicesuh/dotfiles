@@ -1,0 +1,10 @@
+[user]
+	email = justice.suh@gmail.com
+	name = Justice Suh
+
+[init]
+    defaultBranch = main
+
+[core]
+    editor = vim
+
