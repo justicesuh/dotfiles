@@ -12,5 +12,6 @@
     "workbench.statusBar.visible": false,
     "workbench.startupEditor": "none",
 
-    "chat.disableAIFeatures": true
+    "chat.disableAIFeatures": true,
+    "workbench.colorTheme": "Visual Studio Dark"
 }
