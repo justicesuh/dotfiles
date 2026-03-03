@@ -10,5 +10,9 @@
   {
     "url": "https://download.spotify.com/debian/pubkey_5384CE82BA52C83A.asc",
     "location": "/etc/apt/trusted.gpg.d/spotify.gpg"
+  },
+  {
+    "url": "https://dl.google.com/linux/linux_signing_key.pub",
+    "location": "/usr/share/keyrings/google-chrome.gpg"
   }
 ]
