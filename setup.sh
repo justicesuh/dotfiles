@@ -56,7 +56,7 @@ setup_zsh() {
 }
 
 link_files() {
-    find "$DOTFILES" -maxdepth 1 -mindepth 1 -name "$1" ! -name '.git' ! -name '.gitignore' |
+    find "$DOTFILES" -maxdepth 1 -mindepth 1 -name "$1" ! -name '.git' |
     while IFS= read -r f; do
         ln -sf "$f" "$2/${f##*/}"
     done

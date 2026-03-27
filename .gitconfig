@@ -7,4 +7,5 @@
 
 [core]
     editor = vim
+	excludesFile = ~/.gitignore
 
