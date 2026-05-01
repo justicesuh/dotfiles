@@ -48,6 +48,23 @@ install_apt_packages() {
     done
 }
 
+is_flatpak_installed() {
+    flatpak list --app --columns=application | grep -q "^$1$"
+}
+
+install_flatpak() {
+    if ! is_flatpak_installed "$1"; then
+        flatpak install -y flathub "$1"
+    fi
+}
+
+install_flatpak_packages() {
+    flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+    for package in $(cat "$DOTFILES/flatpak_packages"); do
+        install_flatpak $package
+    done
+}
+
 setup_zsh() {
     if install_package zsh; then
         sudo chsh -s $(which zsh)
@@ -86,9 +103,8 @@ add_keys
 add_sources
 sudo apt update
 install_apt_packages
+install_flatpak_packages
 #setup_docker
-
-flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
 gsettings set org.gnome.desktop.interface show-battery-percentage true
 
