@@ -1,11 +1,11 @@
 [user]
-	email = justice.suh@gmail.com
-	name = Justice Suh
+    email = justice.suh@gmail.com
+    name = Justice Suh
 
 [init]
     defaultBranch = main
 
 [core]
     editor = vim
-	excludesFile = ~/.gitignore
+    excludesFile = ~/.gitignore
 
