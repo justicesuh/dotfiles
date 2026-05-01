@@ -88,5 +88,7 @@ sudo apt update
 install_apt_packages
 #setup_docker
 
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+
 gsettings set org.gnome.desktop.interface show-battery-percentage true
 
