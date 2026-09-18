@@ -14,5 +14,9 @@
   {
     "url": "https://dl.google.com/linux/linux_signing_key.pub",
     "location": "/usr/share/keyrings/google-chrome.gpg"
+  },
+  {
+    "url": "https://packages.adoptium.net/artifactory/api/gpg/key/public",
+    "location": "/etc/apt/trusted.gpg.d/adoptium.gpg"
   }
 ]
