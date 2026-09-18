@@ -20,4 +20,4 @@ python3-setuptools
 python3-venv
 qbittorrent
 spotify-client
-temurin-25-jdk
+temurin-17-jdk
