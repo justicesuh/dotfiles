@@ -106,5 +106,7 @@ install_apt_packages
 install_flatpak_packages
 #setup_docker
 
+code --install-extension monokai.theme-monokai-pro-vscode
+
 gsettings set org.gnome.desktop.interface show-battery-percentage true
 

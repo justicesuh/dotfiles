@@ -15,5 +15,8 @@
     "chat.disableAIFeatures": true,
     "workbench.editorAssociations": {
         "*.svg": "default"
-    }
+    },
+
+    "workbench.colorTheme": "Monokai Pro",
+    "workbench.iconTheme": "Monokai Pro Icons"
 }
